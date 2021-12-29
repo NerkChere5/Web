@@ -1,1 +1,1 @@
-import '../../Components/Accordion/Accordion.js';
+import '../../Api/Components/Accordion/Accordion.js';
