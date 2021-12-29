@@ -1,16 +1,17 @@
 :host {
-  --arrow_color: #000;
-  --arrow_hover_color: #f00;
+  --arrow_color: #fff;
+  --arrow_hover_color: #0af;
   --perspective: 800px;
   --plane_angle_tilt: -70deg;
   --plane_angle_turn: 0deg;
-  --plane_color: #0afa;
+  --plane_color: #0af3;
   --plane_diameter: 600px;
   --plane_shift: 200px;
   --slide_color: #0af;
   --slide_hover_color: #f80;
-  --slide_title_color: #000;
   --slide_scale: 0.5;
+  --slide_title_color: #fff;
+  --title_font: 50px 'Arial';
   
   display: grid;
   grid-template: auto max-content / 1fr 1fr;
@@ -128,4 +129,5 @@ x_body {
   color: var(--slide_title_color);
   opacity: 0;
   text-align: center;
+  font: var(--title_font);
 }

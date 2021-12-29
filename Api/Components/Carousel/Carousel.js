@@ -11,7 +11,7 @@ class Carousel extends Component {
   _slide_angle_delta = 0;
   _slide_template = null;
   _slides = [];
-  
+  _timer = setInterval(() => this.turn(1), 3e3);
   
   
   
@@ -32,6 +32,9 @@ class Carousel extends Component {
     
     let shift = event.target == this._arrows[0] ? -1 : 1;
     this.turn(shift);
+    
+    clearInterval(this._timer);
+    this._timer = setInterval(() => this.turn(1), 3e3)
   }
   
   
