@@ -50,7 +50,7 @@ slot[name='subtitle']::slotted(*) {
   font: var(--text_font);
   text-align: justify;
   text-indent: 40px;
-  padding: 20px;
+  padding: 20px 35px;
 }
 
 .title {
