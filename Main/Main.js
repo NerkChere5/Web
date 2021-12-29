@@ -1,2 +1,1 @@
-import '../Components/Church/Church.js';
-import '../Components/Slider/Slider.js';
+import '../Units/Intro/Intro.js';

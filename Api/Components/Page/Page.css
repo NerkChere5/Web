@@ -1,0 +1,137 @@
+:host {
+  background: #15171a;
+  display: block;
+  
+  --head_color: #997300;
+  --head_font: bold 40px 'Arial';
+  --margin: 25px 0px;
+  --text_color: #f5edd7;
+  --text_font: 20px 'Arial';
+}
+
+#slider {
+  display: grid;
+  grid-template: 100% / 100%;
+  justify-items: center;
+}
+
+x-slider {
+  box-sizing: border-box;
+  height: 100vh;
+  grid-area: 1 / 1 / -1 / -1;
+  width: 98.7vw;
+}
+
+slot[name="sliderBox"]::slotted(*) {
+  display: none;
+}
+
+x-slider img {
+  pointer-events: none;
+}
+
+slot[name='subtitle']::slotted(*) {
+  align-self: end;
+  color: #fff;
+  font: 40px 'Arial';
+  grid-area: 1 / 1 / -1 / -1;
+  margin: var(--margin);
+  user-select: none;
+  z-index: 1;
+}
+
+#content {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#main::slotted(*) {
+  color: var(--text_color);
+  font: var(--text_font);
+  text-align: justify;
+  text-indent: 20px;
+}
+
+.title {
+  color: var(--head_color);
+  font: var(--head_font);
+  margin: var(--margin);
+  text-align: center;
+  text-shadow: 1px 2px 1px #000;
+  user-select: none;
+}
+
+slot[name='data-f'] {
+  padding: 10px;
+}
+
+slot[name='data-f']::slotted(*) {
+  color: var(--text_color);
+  font: var(--text_font);
+  margin-bottom: 25px;
+  padding: 10px 10px 10px 5vw;
+}
+
+.facts {
+  border-radius: 10px;
+  border: 3px solid #997300;
+  margin: var(--margin);
+}
+
+#map {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 25px;
+  margin: var(--margin);
+  justify-items: right;
+  align-items: center;
+}
+
+slot[name='address']::slotted(*) {
+  color: var(--text_color);
+  font: var(--text_font);
+}
+
+.history {
+  margin: var(--margin);
+}
+
+slot[name='contacts']::slotted(*) {
+  color: var(--text_color);
+  font: var(--text_font);
+}
+
+#arrow_back {
+  color: var(--text_color);
+  font: var(--text_font);
+}
+
+.back {
+  display: inline-block;
+  border: 1px solid #fff;
+  padding: 10px;
+  margin: var(--margin);
+  user-select: none;
+  cursor: pointer;
+}
+
+.back:hover {
+  background: #fff;
+}
+
+.back:hover * {
+  color: #15171a !important;
+}
+
+#back {
+  display: grid;
+  justify-items: center;
+}
+
+slot[name='backAddress']::slotted(*) {
+  display: none;
+}
+
+slot[name='map']::slotted(*) {
+  pointer-events: none;
+}

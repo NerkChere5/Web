@@ -1,0 +1,28 @@
+x_body {
+  font-family: 'Muli', sans-serif;
+  overflow: hidden;
+  margin: 0;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+::slotted(.slide) {
+  height: 90vh;
+  border-radius: 30px;
+  margin: 0.50%;
+  cursor: pointer;
+  color: white;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all 500ms ease-in-out;
+}
+
+::slotted(.slide.active) {
+  flex: 10;
+}

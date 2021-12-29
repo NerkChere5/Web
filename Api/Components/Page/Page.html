@@ -1,0 +1,35 @@
+<x_body>
+  <div id='slider'>
+    <slot name='sliderBox'></slot>
+    <x-slider delay='3e3'></x-slider>
+    <slot name='subtitle'></slot>
+  </div>
+  
+  <div id='content'>
+    <div class='facts'>
+      <div class='title'>Интересные факты</div>
+      <slot name='data-f'></slot>
+    </div>
+    
+    <div class='history'>
+      <div class='title'>История</div>
+      <slot id='main'></slot>
+    </div>
+    
+    <div id='contacts'>
+      <slot name='contacts'></slot>
+    </div>
+    
+    <div id='map'>
+      <slot name='address'></slot>
+      <slot name='map'></slot>
+    </div>
+  </div>
+  
+  <div id='back'>
+    <div class='back'>
+     <span id='arrow_back'>&#8701; Вернуться на главную страницу</span>
+    </div>
+    <slot name='backAddress'></slot>
+  </div>
+</x_body>
