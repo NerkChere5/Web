@@ -1,1 +1,1 @@
-import '../Components/Accordion/Accordion.js';
+import '../../Components/Accordion/Accordion.js';
