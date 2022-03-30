@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  background: #15171a;
+}
+
+
+x-carousel {
+  height: 100%;
+}

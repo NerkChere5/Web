@@ -1,0 +1,133 @@
+:host {
+  --arrow_color: #fff;
+  --arrow_hover_color: #0af;
+  --perspective: 800px;
+  --plane_angle_tilt: -70deg;
+  --plane_angle_turn: 0deg;
+  --plane_color: #0af3;
+  --plane_diameter: 600px;
+  --plane_shift: 200px;
+  --slide_color: #0af;
+  --slide_hover_color: #f80;
+  --slide_scale: 0.5;
+  --slide_title_color: #fff;
+  --title_font: 50px 'Arial';
+  
+  display: grid;
+  grid-template: auto max-content / 1fr 1fr;
+  height: var(--plane_diameter);
+  user-select: none !important;
+}
+
+:host * {
+  position: relative;
+}
+
+
+x_body {
+  --_plane_radius: calc(var(--plane_diameter) / 2);
+  --_slide_angle: 0deg;
+  
+  display: contents;
+}
+
+
+.arrow {
+  color: var(--arrow_color);
+  font: 100px / 0.8 'Arial';
+  overflow: hidden;
+}
+
+.arrow::after {
+  content: '➯';
+}
+
+.arrow:hover {
+  color: var(--arrow_hover_color);
+  cursor: pointer;
+}
+
+
+.arrow_left {
+  justify-self: end;
+  transform: scaleX(-1);
+}
+
+
+.arrow_right {
+  justify-self: start;
+}
+
+
+.display {
+  align-items: center;
+  display: grid;
+  grid-area: 1 / 1 / 1 / -1;
+  justify-items: center;
+  overflow: hidden;
+  perspective: var(--perspective);
+}
+
+
+.plane {
+  margin: calc(-1 * var(--_plane_radius));
+  align-items: end;
+  background: var(--plane_color);
+  border-radius: 50%;
+  display: grid;
+  height: var(--plane_diameter);
+  justify-items: center;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  transform:
+    translateY(var(--plane_shift))
+    rotateX(var(--plane_angle_tilt))
+  ;
+  width: var(--plane_diameter);
+}
+
+
+.slide {
+  --_slide_angle_final: calc(var(--plane_angle_turn) + var(--_slide_angle) + 90deg);
+  --_slide_color: var(--slide_color);
+  
+  bottom: 50%;
+  cursor: pointer;
+  display: block;
+  filter: drop-shadow(0 0 30px var(--_slide_color));
+  grid-area: 1 / 1;
+  overflow: hidden;
+  pointer-events: initial;
+  text-decoration: none;
+  transform:
+    rotate(calc(-1 * var(--_slide_angle_final)))
+    translateX(var(--_plane_radius))
+    rotate(var(--_slide_angle_final))
+    rotateX(calc(-1 * var(--plane_angle_tilt)))
+    scale(var(--slide_scale))
+  ;
+  transform-origin: center bottom;
+  transition: transform 1s ease;
+}
+
+.slide:hover {
+  --_slide_color: var(--slide_hover_color);
+}
+
+.slide:hover .slide_title {
+  opacity: 1;
+}
+
+
+.slide_image {
+  display: block;
+  margin-top: 1em;
+}
+
+
+.slide_title {
+  color: var(--slide_title_color);
+  opacity: 0;
+  text-align: center;
+  font: var(--title_font);
+}
